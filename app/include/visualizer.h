@@ -9,6 +9,7 @@ public:
     enum Mode {
         WAVEFORM,
         SPECTRUM,
+        BOTH,
     };
 
     Visualizer(SDL_Renderer* renderer, int width, int height);
@@ -18,7 +19,7 @@ public:
     void setMode(Mode mode);
     void resize(int width, int height);
 
-    void render();
+    void render(const AudioEngine::AudioChunk& chunk);
 
     void setColor(SDL_Color color);
     void setBackground(SDL_Color color);
@@ -31,8 +32,8 @@ private:
     SDL_Color line_color;
     SDL_Color backg_color;
 
-    void renderWaveform();
-    void renderSpectrum();
+    void renderWaveform(const AudioEngine::AudioChunk& chunk);
+    void renderSpectrum(const AudioEngine::AudioChunk& chunk);
 
     void drawGrid();
     void drawAxes();
