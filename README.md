@@ -3,7 +3,7 @@
 Real-time audio visualizer written in **C++**, using **FFT (Fast Fourier Transform)** to analyze audio signals and generate graphical visualizations.
 
 <p align="center">
-<img width="80%" alt="Preview" src="https://github.com/JacobPi8/AudioVisualizer/tree/main/assets/preview.gif">
+<img width="80%" alt="Preview" src="https://raw.githubusercontent.com/JacobPi8/AudioVisualizer/main/assets/preview.gif">
 </p>
 
 ## Features
