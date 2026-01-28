@@ -4,6 +4,7 @@
 #include <vector>
 #include <complex>
 #include <string>
+#include <SDL3/SDL.h>
 
 class AudioEngine {
 public:
@@ -14,6 +15,7 @@ public:
         std::vector<float> samples;
         std::vector<Complex> fft;
         std::vector<float> spectrum;
+        int sampleRate;
     };
 
     AudioEngine();
@@ -30,6 +32,9 @@ public:
     int getSampleRate() const;
     int getChannels() const;
 
+    bool startSound();
+    void stopSound();
+
 private:
     std::vector<float> a_samples;
     size_t a_cursor = 0;
@@ -43,6 +48,10 @@ private:
     std::vector<float> computeMagnitudes(const std::vector<Complex>& fft);
 
     bool a_loaded = false;
+
+    SDL_AudioStream* audioStream = nullptr;
+    SDL_AudioDeviceID audioDevice = 0;
+    size_t soundCursor = 0;
 };
 
 #endif

@@ -14,6 +14,8 @@ private:
     AudioEngine:: AudioChunk current_chunk;
     Visualizer* visualizer;
     bool running;
+    bool paused;
+    float speedMultiplier;
     int width, height;
 
 public:

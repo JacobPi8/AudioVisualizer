@@ -155,6 +155,7 @@ bool AudioEngine::getNextChunk(AudioChunk& outChunk) {
 
     fft(outChunk.fft);
     outChunk.spectrum = computeMagnitudes(outChunk.fft);
+    outChunk.sampleRate = a_sampleRate;
     a_cursor += (a_fftSize - a_overlap);
 
     return true;

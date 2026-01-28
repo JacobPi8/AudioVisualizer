@@ -12,6 +12,14 @@ public:
         BOTH,
     };
 
+    struct FrequencyBand {
+        const char* name;
+        float minFreq;
+        float maxFreq;
+        int numBars;
+        SDL_Color color;
+    };
+
     Visualizer(SDL_Renderer* renderer, int width, int height);
     ~Visualizer();
 
